@@ -1,4 +1,13 @@
 Fetch API cannot load file:///C:/Users/dhwns/Desktop/%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9/minishoppingsolution-201020-054804/mini-shopping-solution/data/data.json. URL scheme must be "http" or "https" for' CORS request.
-- 이미지 파일 불러올 수 없음. 에러 해결 : live server extension 사용
+- 이미지 파일 불러올 수 없음. 에러 해결 : live server extension 사용 해결
 
-에러 해결 했지만 이벤트리스너 실행이 되지 않았다. 어떤 문제일까.. 코드는 엘리쌤이랑 똑같다.  
+에러 해결 했지만 이벤트리스너 실행이 되지 않았다. 어떤 문제일까.. 코드는 엘리쌤이랑 똑같다.
+
+buttons.addEventListener('click' , event => onButtonClick(event, items));의 에러
+TypeError: Cannot read property 'addEventListener' of null
+    at setEventListeners (main.js:43)
+    at main.js:51
+
+-> 해결 :   if(buttons){
+    buttons.addEventListener('click' , event => onButtonClick(event, items));
+  } 이유는... 모르겠다.. 오류는 발생하지 않지만 클릭할 때 실행은 되지 않는다. 
