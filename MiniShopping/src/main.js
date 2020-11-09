@@ -29,8 +29,10 @@ function onButtonClick(event, items) {
   if (key == null || value == null) {
     return;
   }
-
-  displayItems(items.filter(item => item[key] === value));
+  
+  const filtered = items.filter(item => item[key] === value)
+  console.log(filtered);
+  displayItems();
 }
 
 function setEventListeners(items) {
