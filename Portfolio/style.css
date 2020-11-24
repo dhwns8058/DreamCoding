@@ -130,6 +130,17 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+
+  display: none;
+  /* opacity를 사용하면 클릭이 되기 때문에 */
+}
+
 /* Home */
 #home {
   background: url("imgs/home-background.png") center/cover no-repeat;
@@ -299,10 +310,10 @@ p {
 /* Work */
 
 .work__categories {
-  margin: 48px;
+  margin: 40px;
 }
 .category__btn {
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
@@ -348,7 +359,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 280px;
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
@@ -358,6 +369,7 @@ p {
   /* 담겨있는 box에서 100% */
   max-width: 100%;
   max-height: 100%;
+  align-self: center;
 }
 
 .project__description {
@@ -372,7 +384,7 @@ p {
   left: 0;
   /* 투명도 */
   opacity: 0;
-  transform: translateY(15px);
+  transform: translateY(10px);
   transition: all var(--animation-duration) ease-in;
 }
 
@@ -415,7 +427,6 @@ p {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 12px;
 }
 
 .testimonial__avatar:nth-child(odd) {
@@ -437,4 +448,71 @@ p {
 
 .testimonial__speech-bubble a {
   color: var(--color-pink);
+}
+
+/* Contact */
+#contact {
+  background-color: var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-yellow);
+  transition: all var(--animation-duration) ease-in;
+}
+
+/* 반응형 ( for below 768px screen width */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    /* 왼쪽 정렬 */
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
