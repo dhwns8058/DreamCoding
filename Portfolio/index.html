@@ -22,16 +22,14 @@
             <i class="fas fa-drum"></i>
             <a href="#">OJoon</a>
         </div>
-          <div class="navbar__menu">
             <ul class="navbar__menu">
-                <li class="navbar__menu__item active">Home</li>
-                <li class="navbar__menu__item">About</li>
-                <li class="navbar__menu__item">Skills</li>
-                <li class="navbar__menu__item">My work</li>
-                <li class="navbar__menu__item">Testimonial</li>
-                <li class="navbar__menu__item">Contact</li>
+                <li class="navbar__menu__item active" data-link="#home">Home</li>
+                <li class="navbar__menu__item" data-link="#about">About</li>
+                <li class="navbar__menu__item" data-link="#skills">Skills</li>
+                <li class="navbar__menu__item" data-link="#work">My work</li>
+                <li class="navbar__menu__item" data-link="#testimonials">Testimonial</li>
+                <li class="navbar__menu__item" data-link="#contact">Contact</li>
             </ul>
-          </div>
 
         <!-- Toggle button -->
         <button class="navbar__toggle-btn">
@@ -41,10 +39,12 @@
 
     <!--Home-->
     <section id="home">
-        <img src="imgs/Home.jpg" alt="OJ's profile photo" class="home__avatar">
-        <h1 class="home__title">Hello, <br />I am Oh Joon</h1>
-        <h2 class="home__description">Front-end developer</h2>
-        <button class="home__contact">contact me</button>
+        <div class="home__container">
+            <img src="imgs/Home.jpg" alt="OJ's profile photo" class="home__avatar">
+            <h1 class="home__title">Hello, <br />I am Oh Joon</h1>
+            <h2 class="home__description">Front-end developer</h2>
+            <button class="home__contact">contact me</button>
+        </div>
     </section>
 
     <!--About-->
@@ -177,15 +177,15 @@
             <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-            <button class="category__btn active">All<span class="category__count">8</span></button>
-            <button class="category__btn">Front-end<span class="category__count">3</span></button>
-            <button class="category__btn">Mobile<span class="category__count">3</span></button>
-            <button class="category__btn">Back-end<span class="category__count">2</span></button>
+            <button class="category__btn selected" data-filter="*">All<span class="category__count">8</span></button>
+            <button class="category__btn" data-filter="front-end">Front-end<span class="category__count">3</span></button>
+            <button class="category__btn" data-filter="mobile">Mobile<span class="category__count">3</span></button>
+            <button class="category__btn" data-filter="back-end">Back-end<span class="category__count">2</span></button>
         </div>
 
         <div class="work__projects">
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="front-end"
             >
             <img class="project__img" src="imgs/project1.png" alt="">
             <div class="project__description">
@@ -194,7 +194,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="back-end"
             >
             <img class="project__img" src="imgs/project2.png" alt="">
             <div class="project__description">
@@ -203,7 +203,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="front-end"
             >
             <img class="project__img" src="imgs/project3.png" alt="">
             <div class="project__description">
@@ -212,7 +212,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="mobile"
             >
             <img class="project__img" src="imgs/project4.png" alt="">
             <div class="project__description">
@@ -221,7 +221,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="back-end"
             >
             <img class="project__img" src="imgs/project5.png" alt="">
             <div class="project__description">
@@ -230,7 +230,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="front-end"
             >
             <img class="project__img" src="imgs/project6.png" alt="">
             <div class="project__description">
@@ -239,7 +239,7 @@
             </div>
             </a>
             <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-            target="blank"
+            target="blank" data-type="back-end"
             >
             <img class="project__img" src="imgs/project7.png" alt="">
             <div class="project__description">
@@ -248,7 +248,7 @@
             </div>
             </a>
              <a href="https://github.com/dhwns8058/DreamCoding/tree/main/Portfolio" class="project"
-             target="blank"
+             target="blank" data-type="mobile"
              >
              <img class="project__img" src="imgs/project8.png" alt="">
              <div class="project__description">
@@ -311,5 +311,10 @@
         <p class="contact__rights">2020 OJoon
         </p>
     </section>
+
+    <!-- Arrow Up -->
+    <button class="arrow-up">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html>
